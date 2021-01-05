@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+        <title>Speech Recognition</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/index.css')}}">
+</head>
+<body>
+<div id="speechcontainer">
+    <h1>Speech Recognition with .wav file</h1><br>
+   <h3>Upload a .Wav file</h3>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file"><br><br>
+        <input id="submitbutton" type="submit" value="Transcribe">
+    </form>
+    {%if transcript!=""%}
+        <div id="speechtranscript">
+            <h1>Transcript</h1>
+            <p id="speechtext">{{transcript}}</p>
+        </div>
+    {%endif%}
+</div>
+</body>
+</html>
